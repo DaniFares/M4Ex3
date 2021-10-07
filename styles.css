@@ -1,0 +1,166 @@
+body{
+    margin:0%;
+    height: 100%;
+    width: 100%;
+    font-family: 'Lato', sans-serif;
+}
+
+
+.caja{
+    display: flex;
+    width: 100%;
+    height: 110vh;
+}
+
+/*Tipografia*/
+ h1{
+     display: flex;
+     position: absolute;
+     top: 52vh; /*Aqui hay algo que no cuadra con el ratio de la pantalla*/
+     font-size: 4vh;
+     font-weight: lighter;
+     color:#fff;    
+    
+    }
+
+/*Lineas transparentes animadas*/
+
+.strip{
+    
+    overflow: hidden;
+    position: absolute;
+    width: 20%;
+    min-height: 110vh;
+    cursor: pointer;
+
+}
+.strip:before {
+    content: ""; 
+    position: absolute;
+    z-index: 3;
+    top: 0; 
+    left: 0%;
+    width: 100%;
+    height: 100%;
+    background: white;
+    opacity: 0.05;
+    transform-origin: center center;
+    transform: skew(30deg) scaleY(1) translate(0, 0);
+
+}
+
+.strip:hover::before{
+    animation: stripanimation 0.4s forwards ;
+}
+
+/*Flex de Titulos*/
+.title{
+    display: flex;
+    margin: 0;
+    justify-content: center;
+    position: relative;
+    z-index: 2;
+    width: 100%;
+    font-size: 3.5vw;
+    color: white;
+}
+
+/* columnas con tipografias y animaciones iniciales*/
+.it{
+    animation: subida 0.2s ease-in;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top:-10vh;
+    width: 25%;
+    height: 100%;
+    background: #244F75; 
+    z-index: 1;  
+}
+
+.ac{
+    animation: bajada 0.4s ease-in;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top:-10vh;
+    background: #60BFBF;
+    z-index: 5;
+    width: 25%;
+    height: 100%;
+}
+
+
+.ca{
+    animation: subida 0.7s ease-in;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top:-10vh;
+    background: #8C4B7E;
+    width: 25%;
+    z-index: 4;
+height: 100%;
+}
+
+.de{
+    animation: bajada 0.9s ease-in;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top:-10vh;
+    background: #F8BB44;
+    width: 25%;
+height: 100%;
+}
+
+.my{
+    animation: subida 1s ease-in-out;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    margin-top:-10vh;
+    background: #F24B4B;
+    width: 25%;
+height: 100%;
+}
+
+
+/*Animaciones*/
+
+@keyframes stripanimation {
+   0%{
+    transform: translate3d(-100,0,0);    
+   } 
+ 
+   100%{
+    transform:translate3d(0,0,0);
+}
+}
+
+@keyframes subida {
+    0%{
+        transform: translateY(110%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+    
+}
+
+@keyframes bajada {
+    0%{
+        transform: translateY(-110%);
+    }
+    100%{
+        transform: translateY(0%);
+    }
+    
+}
+
+
